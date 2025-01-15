@@ -1,6 +1,6 @@
 // Copyright Code Goblin Games
 
-#include "AuraCharacterBase.h"
+#include "Character/AuraCharacterBase.h"
 
 AAuraCharacterBase::AAuraCharacterBase()
 {
