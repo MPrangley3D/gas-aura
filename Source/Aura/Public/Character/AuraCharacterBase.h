@@ -20,6 +20,9 @@ public:
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
 
+	void SetAbilitySystemComponent(TObjectPtr<UAbilitySystemComponent> NewAbilitySystemComponent);
+	void SetAttributeSet(TObjectPtr<UAttributeSet> NewAttributeSet);
+
 protected:
 	virtual void BeginPlay() override;
 

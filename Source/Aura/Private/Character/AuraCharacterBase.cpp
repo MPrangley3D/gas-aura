@@ -16,6 +16,16 @@ UAbilitySystemComponent* AAuraCharacterBase::GetAbilitySystemComponent() const
 	return AbilitySystemComponent;
 }
 
+void AAuraCharacterBase::SetAbilitySystemComponent(TObjectPtr<UAbilitySystemComponent> NewAbilitySystemComponent)
+{
+	AbilitySystemComponent = NewAbilitySystemComponent;
+}
+
+void AAuraCharacterBase::SetAttributeSet(TObjectPtr<UAttributeSet> NewAttributeSet)
+{
+	AttributeSet = NewAttributeSet;
+}
+
 void AAuraCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
