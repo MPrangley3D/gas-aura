@@ -54,6 +54,7 @@ void AAuraCharacter::InitAbilityActorInfo()
 	{
 		AuraPlayerState->GetAbilitySystemComponent()->InitAbilityActorInfo(AuraPlayerState, this);
 		AbilitySystemComponent = AuraPlayerState->GetAbilitySystemComponent();
+		// AttributeSet automatically registers to AbilitySystemComponent when constructed in the same owning actor
 		AttributeSet = AuraPlayerState->GetAttributeSet();
 	}
 }
