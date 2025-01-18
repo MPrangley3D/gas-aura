@@ -21,6 +21,9 @@ public:
 	UFUNCTION()
 	virtual void EndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
+	UPROPERTY(BlueprintReadWrite)
+	bool bHealthPotion;
+
 protected:
 	virtual void BeginPlay() override;
 
