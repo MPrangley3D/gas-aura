@@ -29,12 +29,9 @@ AAuraCharacter::AAuraCharacter()
 void AAuraCharacter::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
-
+	
 	// Init ability actor info on Server
-	if (HasAuthority())
-	{
-		InitAbilityActorInfo();
-	}
+	InitAbilityActorInfo();
 }
 
 void AAuraCharacter::OnRep_PlayerState()
@@ -42,11 +39,7 @@ void AAuraCharacter::OnRep_PlayerState()
 	Super::OnRep_PlayerState();
 	
 	// Init ability actor info on Client
-	if (HasAuthority())
-	{
-		InitAbilityActorInfo();
-	}
-	
+	InitAbilityActorInfo();
 }
 
 void AAuraCharacter::InitAbilityActorInfo()
@@ -64,6 +57,10 @@ void AAuraCharacter::InitAbilityActorInfo()
 			if (AAuraHUD* AuraHUD = Cast<AAuraHUD>(AuraPlayerController->GetHUD()))
 			{
 				AuraHUD->InitOverlay(AuraPlayerController, AuraPlayerState, AbilitySystemComponent, AttributeSet);
+			}
+			else
+			{
+				UE_LOG(LogTemp, Error, TEXT("Null HUD"));
 			}
 		}		
 	}
